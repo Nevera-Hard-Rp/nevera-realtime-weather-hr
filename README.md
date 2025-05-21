@@ -43,24 +43,24 @@ Nevera Realtime Weather v1.1
 3. **Konfigurirajte `server.cfg`** sa sljedećim postavkama:
 
 ```cfg
-# Nevera Realtime Weather konfiguracija
+## Nevera Realtime Weather konfiguracija
 set my_sync_key "VAŠ_API_KLJUČ"           # Vaš OpenWeatherMap API ključ
 set my_sync_timezone "Europe/Zagreb"      # Vaša vremenska zona
 set my_sync_city "Split"                  # Vaš grad
 set nevera_license_key "LICENČNI_KLJUČ"   # Vaš Tebex licenčni ključ
 set disable_fog "true"                    # Postavite na "false" za uključivanje magle
 
-# Pokretanje resursa
+## Pokretanje resursa
 ensure nevera-realtime-weather
 Kako dobiti API ključ
 
-Posjetite OpenWeatherMap
+##Posjetite OpenWeatherMap
 Napravite besplatni račun
 Idite u API keys sekciju u vašem profilu
 Generirajte novi API ključ
 Koristite taj ključ u vašem server.cfg
 
-Korištenje
+## Korištenje
 Resurs automatski počinje raditi nakon instalacije. On će:
 
 Dohvaćati vremenske podatke svakih 10 minuta
@@ -68,7 +68,7 @@ Prikazivati vremenske obavijesti 15 sekundi nakon svakog ažuriranja
 Sinkronizirati vrijeme u igri sa stvarnim vremenom
 Prilagođavati vremenske uvjete prema stvarnim podacima
 
-Opcije konfiguracije
+## Opcije konfiguracije
 Sve opcije možete pronaći i mijenjati u config.lua datoteci:
 OpcijaOpisZadanoConfig.OpenWeatherAPIKeyVaš OpenWeatherMap API ključPotrebno postavitiConfig.CityGrad za koji se dohvaćaju vremenski podaci"Split"Config.TimezoneVremenska zona za sinkronizaciju"Europe/Zagreb"Config.NotificationDurationTrajanje obavijesti u ms15000Config.DisplayFormatPozicija obavijesti"topLeft"Config.DisableFogOnemogućavanje magletrueConfig.UseSnowOmogućavanje snijegatrueConfig.WeatherUpdateIntervalInterval ažuriranja u ms600000Config.EnableWindOmogućavanje vjetratrueConfig.HighWindThresholdPrag za jaki vjetar (m/s)10
 Performanse
@@ -78,7 +78,7 @@ Potrošnja u idle stanju: 0.01ms
 Tijekom ažuriranja vremena: 0.02-0.03ms (kratki skok)
 Korištenje memorije: Minimalno
 
-Kompatibilnost
+## Kompatibilnost
 Nevera Realtime Weather je dizajnirana da radi sa svim mogućim FiveM serverima:
 FrameworkKompatibilnostESX✅ PotpunaQBCore✅ PotpunavRP✅ PotpunaStandalone✅ PotpunaPrilagođeni✅ Potpuna
 Bez obzira koji framework koristite ili planirate koristiti u budućnosti,
@@ -99,7 +99,7 @@ Sinkronizacija vremenskih uvjeta u stvarnom vremenu
 Sinkronizacija vremena
 Podrška za više frameworka
 
-### Česta pitanja
+### **Česta pitanja**
 
 **Kako mogu produžiti trajanje prikaza obavijesti o vremenu?**
 U datoteci `config.lua` možete promijeniti postavku `Config.NotificationDuration` na željeni broj milisekundi. 
@@ -107,18 +107,18 @@ Na primjer, za prikaz koji traje 30 sekundi:
 ```lua
 Config.NotificationDuration = 30000  -- 30 sekundi (30000 ms)
 
-Podrška
+**Podrška**
 Za podršku, kontaktirajte nas putem:
 
-Tebex poruka
-Discord: VašDiscordServer
-Email: vaš@email.com
+**Tebex poruka**
+**Discord**: discord.gg/DA9FZ4RmpG
+**Email**: nevera.rp@gmail.com
 
 Licenca
 Ovo je komercijalni softver. Neovlašteno distribuiranje je zabranjeno.
 © 2025 Nevera, Sva prava pridržana.
 
-### 6. LICENSE
+### 6. **LICENSE**
 ```markdown
 # Nevera Realtime Weather - Komercijalna licenca
 
@@ -128,28 +128,28 @@ Ovaj Ugovor o licenciranju softvera ("Ugovor") je pravni ugovor između vas (bil
 
 Instaliranjem, kopiranjem ili korištenjem Softvera na bilo koji način, pristajete biti vezani uvjetima ovog Ugovora. Ako ne pristajete na uvjete ovog Ugovora, nemojte instalirati ili koristiti Softver.
 
-## 1. DODJELA LICENCE
+## 1. **DODJELA LICENCE**
 
-### 1.1 Licenca za jedan server
+### 1.1 **Licenca za jedan server**
 Ova licenca vam daje pravo instaliranja i korištenja Softvera na jednoj instanci FiveM servera.
 
-### 1.2 Ograničenja
-NE smijete:
+### 1.2 **Ograničenja**
+**NE smijete**:
 - Koristiti Softver na više od jedne instance FiveM servera bez kupnje dodatnih licenci
 - Distribuirati, dijeliti, iznajmljivati, prodavati ili podlicencirati Softver
 - Modificirati, dekompilirati, obrnuto inženjerstvo, rastaviti ili stvarati izvedena djela temeljena na Softveru
 - Uklanjati bilo kakve oznake vlasništva ili oznake sa Softvera
 - Koristiti Softver za ilegalne ili neovlaštene svrhe
 
-## 2. INTELEKTUALNO VLASNIŠTVO I VLASNIŠTVO
+## 2. **INTELEKTUALNO VLASNIŠTVO I VLASNIŠTVO**
 
 Softver je zaštićen zakonima o autorskim pravima i međunarodnim ugovorima o autorskim pravima, kao i drugim zakonima i ugovorima o intelektualnom vlasništvu. Softver je licenciran, a ne prodan. Autor zadržava sva prava, naslov i interes za i u Softveru, uključujući sva prava intelektualnog vlasništva.
 
-## 3. TRAJANJE I RASKID
+## 3. **TRAJANJE I RASKID**
 
 Ovaj Ugovor je na snazi dok se ne raskine. Autor može raskinuti ovaj Ugovor ako ne ispunite bilo koji uvjet ili odredbu ovog Ugovora. Nakon raskida, morate uništiti sve kopije Softvera i sve njegove komponente.
 
-## 4. BEZ JAMSTVA
+## 4. **BEZ JAMSTVA**
 
 Autor izričito odriče bilo kakvo jamstvo za Softver. Softver se pruža "KAKAV JEST" bez ikakvog izričitog ili impliciranog jamstva bilo koje vrste, uključujući, ali ne ograničavajući se na bilo kakva jamstva za mogućnost prodaje, nekršenje ili prikladnost za određenu svrhu.
 
