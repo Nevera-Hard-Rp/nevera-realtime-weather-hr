@@ -17,6 +17,19 @@ Nevera Realtime Weather v1.1
 - **Kompatibilna s više frameworka**: Radi s ESX, QBCore, vRP ili kao Standalone
 - **Prilagodljiva**: Jednostavna konfiguracija putem config.lua datoteke
 
+### View Images
+1. **Data synchronization**:
+   ![Prva slika](https://i.imgur.com/8S7uUxb.png)
+
+2. **Data update**:
+   ![Ažuriranje podataka](https://i.imgur.com/axpJm9s.png)
+
+3. **Resmon value in game**:
+   ![Resmon](https://i.imgur.com/0L9ETkn.png)
+
+4. **Clock display in the upper left corner every 10 minutes, with a duration of 15 seconds**: 
+   ![Prikaz sata](https://i.imgur.com/CovWD3l.png)
+
 ## Zahtjevi
 
 - **FiveM Server**: Najnovija verzija
