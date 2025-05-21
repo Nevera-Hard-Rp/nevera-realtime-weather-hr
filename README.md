@@ -1,170 +1,192 @@
-# nevera-realtime-weather-hr
-Nevera Realtime Weather v1.1
 # Nevera Realtime Weather
 
 **Nevera Realtime Weather** je premium skripta za FiveM servere koja sinkronizira vrijeme i vremenske uvjete u igri s realnim podacima putem OpenWeatherMap API-ja.
 
+---
+
 ## Značajke
 
-- **Sinkronizacija stvarnog vremena**: Dohvaća realne vremenske podatke za bilo koji grad
-- **Dinamička sinkronizacija sata**: Sinkronizira vrijeme u igri sa stvarnim vremenom
-- **Automatski prijelazi vremenskih uvjeta**: Glatki prijelazi između vremenskih uvjeta
-- **Napredni sustav vjetra**: Dinamička brzina i smjer vjetra prema stvarnim podacima
-- **Sustav obavijesti**: Elegantne obavijesti o promjenama vremena
-- **Resursno učinkovita**: Optimizirani kod s minimalnim korištenjem resursa (0.01ms u idle stanju)
-- **Serversko keširanje**: Smanjuje API pozive i pruža fallback tijekom nedostupnosti servisa
-- **Kontrola magle**: Opcija za onemogućavanje magle u regijama gdje je rijetka
-- **Kompatibilna s više frameworka**: Radi s ESX, QBCore, vRP ili kao Standalone
-- **Prilagodljiva**: Jednostavna konfiguracija putem config.lua datoteke
+- **Sinkronizacija stvarnog vremena** – Dohvaća vremenske podatke za bilo koji grad
+- **Dinamička sinkronizacija sata** – Vrijeme u igri prati stvarno
+- **Automatski prijelazi** – Glatke promjene između vremenskih uvjeta
+- **Vjetar** – Dinamična brzina i smjer prema stvarnim podacima
+- **Obavijesti** – Prikaz vremena svakih 10 minuta
+- **Resursno učinkovita** – 0.01ms u idle stanju
+- **Fallback sustav** – Radi čak i kad je API nedostupan
+- **Magla i snijeg** – Potpuna konfiguracija
+- **Framework kompatibilnost** – ESX, QBCore, vRP i Standalone
+- **Laka konfiguracija** – `config.lua` s detaljnim opcijama
 
-### View Images
-1. **Data synchronization**:
-   ![Prva slika](https://i.imgur.com/8S7uUxb.png)
+---
 
-2. **Data update**:
-   ![Ažuriranje podataka](https://i.imgur.com/axpJm9s.png)
+## Zahtjevi
 
-3. **Resmon value in game**:
-   ![Resmon](https://i.imgur.com/0L9ETkn.png)
+- **FiveM server** – Najnovija verzija
+- **OpenWeatherMap API ključ** – Može biti besplatan
+- Kompatibilnost: **ESX**, **QBCore**, **vRP**, **Standalone**
 
-4. **Clock display in the upper left corner every 10 minutes, with a duration of 15 seconds**: 
-   ![Prikaz sata](https://i.imgur.com/CovWD3l.png)
+---
 
-### Zahtjevi
+## Instalacija
 
-- **FiveM Server**: Najnovija verzija
-- **OpenWeatherMap API ključ**: Besplatna verzija savršeno funkcionira
-- **Framework**: Kompatibilna s ESX, QBCore, vRP ili kao Standalone
+1. Kupite i preuzmite resurs s Tebex-a
+2. Raspakirajte u `resources` mapu vašeg servera
+3. Dodajte sljedeće u `server.cfg`:
 
-### **Instalacija**
-
-1. **Kupite i preuzmite** resurs s Tebex-a
-2. **Raspakirajte datoteke** u mapu resursa vašeg servera
-3. **Konfigurirajte `server.cfg`** sa sljedećim postavkama:
-
-
-## **Nevera Realtime Weather konfiguracija**
-   ```cfg
+```cfg
+# Nevera Realtime Weather konfiguracija
 set my_sync_key "VAŠ_API_KLJUČ"           # Vaš OpenWeatherMap API ključ
 set my_sync_timezone "Europe/Zagreb"      # Vaša vremenska zona
-set my_sync_city "Split"                  # Vaš grad
+set my_sync_city "Split"                  # Grad koji želite sinkronizirati
 set nevera_license_key "LICENČNI_KLJUČ"   # Vaš Tebex licenčni ključ
 set disable_fog "true"                    # Postavite na "false" za uključivanje magle
--
 
-### **Pokretanje resursa**
 ensure nevera-realtime-weather
-Kako dobiti API ključ
+```
 
-### **Posjetite OpenWeatherMap**
-Napravite besplatni račun
-Idite u API keys sekciju u vašem profilu
-Generirajte novi API ključ
-Koristite taj ključ u vašem server.cfg
+---
 
-### **Korištenje**
-Resurs automatski počinje raditi nakon instalacije. On će:
+## Kako do API ključa
 
-Dohvaćati vremenske podatke svakih 10 minuta
-Prikazivati vremenske obavijesti 15 sekundi nakon svakog ažuriranja
-Sinkronizirati vrijeme u igri sa stvarnim vremenom
-Prilagođavati vremenske uvjete prema stvarnim podacima
+1. Posjeti [openweathermap.org](https://openweathermap.org/)
+2. Registriraj se i idi u **API Keys**
+3. Generiraj ključ i zalijepi ga u `server.cfg`
 
-### **Opcije konfiguracije**
-Sve opcije možete pronaći i mijenjati u config.lua datoteci:
-OpcijaOpisZadanoConfig.OpenWeatherAPIKeyVaš OpenWeatherMap API ključPotrebno postavitiConfig.CityGrad za koji se dohvaćaju vremenski podaci"Split"Config.TimezoneVremenska zona za sinkronizaciju"Europe/Zagreb"Config.NotificationDurationTrajanje obavijesti u ms15000Config.DisplayFormatPozicija obavijesti"topLeft"Config.DisableFogOnemogućavanje magletrueConfig.UseSnowOmogućavanje snijegatrueConfig.WeatherUpdateIntervalInterval ažuriranja u ms600000Config.EnableWindOmogućavanje vjetratrueConfig.HighWindThresholdPrag za jaki vjetar (m/s)10
-Performanse
-Ovaj resurs je visoko optimiziran:
+---
 
-Potrošnja u idle stanju: 0.01ms
-Tijekom ažuriranja vremena: 0.02-0.03ms (kratki skok)
-Korištenje memorije: Minimalno
+## Konfiguracija (`config.lua`)
 
-### Kompatibilnost
-Nevera Realtime Weather je dizajnirana da radi sa svim mogućim FiveM serverima:
-FrameworkKompatibilnostESX✅ PotpunaQBCore✅ PotpunavRP✅ PotpunaStandalone✅ PotpunaPrilagođeni✅ Potpuna
-Bez obzira koji framework koristite ili planirate koristiti u budućnosti,
-Nevera Realtime Weather će raditi besprijekorno, bez potrebe za dodatnim podešavanjima!
-Povijest verzija
-v1.1.0 (Svibanj 2025)
+Primjeri opcija:
 
-Velike optimizacije performansi
-Dodano serversko keširanje odgovora
-Poboljšana logika sinkronizacije vremena
-Dodan fallback mehanizam tijekom nedostupnosti API-ja
-Poboljšan sustav vjetra
-Ispravljeni razni rubni slučajevi
-
-v1.0.0 (Inicijalno izdanje)
-
-Sinkronizacija vremenskih uvjeta u stvarnom vremenu
-Sinkronizacija vremena
-Podrška za više frameworka
-
-### **Česta pitanja**
-
-**Kako mogu produžiti trajanje prikaza obavijesti o vremenu?**
-U datoteci `config.lua` možete promijeniti postavku `Config.NotificationDuration` na željeni broj milisekundi. 
-Na primjer, za prikaz koji traje 30 sekundi:
 ```lua
-Config.NotificationDuration = 30000  -- 30 sekundi (30000 ms)
+Config.OpenWeatherAPIKey = "VAŠ_KLJUČ"
+Config.City = "Split"
+Config.Timezone = "Europe/Zagreb"
+Config.NotificationDuration = 15000
+Config.DisplayFormat = "topLeft"
+Config.DisableFog = true
+Config.UseSnow = true
+Config.WeatherUpdateInterval = 600000
+Config.EnableWind = true
+Config.HighWindThreshold = 10
+```
 
-### **Podrška**
-Za podršku, kontaktirajte nas putem:
+---
 
-**Tebex poruka**
-**Discord**: discord.gg/DA9FZ4RmpG
-**Email**: nevera.rp@gmail.com
+## Performanse
 
-### Licenca
-Ovo je komercijalni softver. Neovlašteno distribuiranje je zabranjeno.
-© 2025 Nevera, Sva prava pridržana.
+- Idle: **0.01ms**
+- Ažuriranje: **0.02-0.03ms**
+- Minimalna potrošnja memorije
 
-### 6. **LICENSE**
+---
+
+## Kompatibilnost
+
+| Framework     | Podržano |
+|---------------|----------|
+| ESX           | ✅        |
+| QBCore        | ✅        |
+| vRP           | ✅        |
+| Standalone    | ✅        |
+| Custom        | ✅        |
+
+---
+
+## Verzije
+
+### v1.1.0 – Svibanj 2025
+- Dodano serversko keširanje
+- Fallback sustav za API
+- Optimizacija performansi
+- Bolji sustav vjetra
+
+### v1.0.0 – Inicijalna verzija
+- Realno vrijeme i vremenski uvjeti
+- Notifikacije
+- Podrška za više frameworka
+
+---
+
+## Screenshots
+
+**1. Vremenska sinkronizacija**
+![Data Sync](https://i.imgur.com/8S7uUxb.png)
+
+**2. API odgovor**
+![Update](https://i.imgur.com/axpJm9s.png)
+
+**3. Resmon performanse**
+![Resmon](https://i.imgur.com/0L9ETkn.png)
+
+**4. Prikaz sata i vremena**
+![Sat](https://i.imgur.com/CovWD3l.png)
+
+---
+
+## Česta pitanja
+
+**Kako produljiti trajanje obavijesti o vremenu?**
+
+U `config.lua`:
+
+```lua
+Config.NotificationDuration = 30000  -- 30 sekundi
+```
+
+---
+
+## Podrška
+
+- 📬 Tebex poruka
+- 💬 Discord: [discord.gg/DA9FZ4RmpG](https://discord.gg/DA9FZ4RmpG)
+- ✉️ Email: nevera.rp@gmail.com
+
+---
+
+## Licenca
+
+Korištenje dopušteno samo za jedan server. Zabranjena je redistribucija i izmjene bez dopuštenja.
+
+© 2025 Nevera. Sva prava pridržana.
+
+---
+
+## LICENSE
+
 ```markdown
 # Nevera Realtime Weather - Komercijalna licenca
 
-### Ugovor o licenciranju softvera
+## Ugovor o licenciranju softvera
 
-Ovaj Ugovor o licenciranju softvera ("Ugovor") je pravni ugovor između vas (bilo pojedinca ili pravne osobe) i Nevere ("Autor") za softverski proizvod identificiran iznad, koji uključuje računalni softver i pripadajuće medije i dokumentaciju ("Softver").
+Pravni ugovor između korisnika i autora Nevera. Instaliranjem pristajete na uvjete. Ako ne, ne koristite softver.
 
-Instaliranjem, kopiranjem ili korištenjem Softvera na bilo koji način, pristajete biti vezani uvjetima ovog Ugovora. Ako ne pristajete na uvjete ovog Ugovora, nemojte instalirati ili koristiti Softver.
+## 1. LICENCA
 
-### 1. **DODJELA LICENCE**
+Licenca vrijedi za **jedan server**. Ne smijete:
+- Koristiti na više servera bez dodatnih licenci
+- Dijeliti, prodavati, mijenjati, rastavljati ili dekompilirati softver
+- Koristiti softver u neovlaštene ili ilegalne svrhe
 
-### 1.1 **Licenca za jedan server**
-Ova licenca vam daje pravo instaliranja i korištenja Softvera na jednoj instanci FiveM servera.
+## 2. VLASNIŠTVO
 
-### 1.2 **Ograničenja**
-**NE smijete**:
-- Koristiti Softver na više od jedne instance FiveM servera bez kupnje dodatnih licenci
-- Distribuirati, dijeliti, iznajmljivati, prodavati ili podlicencirati Softver
-- Modificirati, dekompilirati, obrnuto inženjerstvo, rastaviti ili stvarati izvedena djela temeljena na Softveru
-- Uklanjati bilo kakve oznake vlasništva ili oznake sa Softvera
-- Koristiti Softver za ilegalne ili neovlaštene svrhe
+Softver ostaje intelektualno vlasništvo autora.
 
-### 2. **INTELEKTUALNO VLASNIŠTVO I VLASNIŠTVO**
+## 3. RASKID
 
-Softver je zaštićen zakonima o autorskim pravima i međunarodnim ugovorima o autorskim pravima, kao i drugim zakonima i ugovorima o intelektualnom vlasništvu. Softver je licenciran, a ne prodan. Autor zadržava sva prava, naslov i interes za i u Softveru, uključujući sva prava intelektualnog vlasništva.
+Kršenjem uvjeta licenca se automatski raskida.
 
-### 3. **TRAJANJE I RASKID**
+## 4. JAMSTVO
 
-Ovaj Ugovor je na snazi dok se ne raskine. Autor može raskinuti ovaj Ugovor ako ne ispunite bilo koji uvjet ili odredbu ovog Ugovora. Nakon raskida, morate uništiti sve kopije Softvera i sve njegove komponente.
+Softver se pruža **"kakav jest"**, bez ikakvog jamstva.
 
-### 4. **BEZ JAMSTVA**
+## 5. ODGOVORNOST
 
-Autor izričito odriče bilo kakvo jamstvo za Softver. Softver se pruža "KAKAV JEST" bez ikakvog izričitog ili impliciranog jamstva bilo koje vrste, uključujući, ali ne ograničavajući se na bilo kakva jamstva za mogućnost prodaje, nekršenje ili prikladnost za određenu svrhu.
+Autor ne odgovara za bilo kakve štete, gubitke ili probleme nastale korištenjem.
 
-### 5. OGRANIČENJE ODGOVORNOSTI
+## 6. PRAVO
 
-Autor ni u kojem slučaju neće biti odgovoran za bilo kakvu štetu (uključujući, bez ograničenja, izgubljenu dobit, prekid poslovanja ili izgubljene informacije) koja proizlazi iz korištenja ili nemogućnosti korištenja Softvera, čak i ako je Autor bio obaviješten o mogućnosti takve štete.
+Primjenjuje se zakon Republike Hrvatske.
 
-### 6. OPĆE ODREDBE
-
-Ovaj Ugovor predstavlja cjeloviti sporazum između vas i Autora i zamjenjuje sve prethodne izjave, predstavljanja ili sporazume, bilo usmene ili pisane.
-
-### 7. MJERODAVNO PRAVO
-
-Ovaj Ugovor će biti uređen zakonima Republike Hrvatske.
-
-Autorska prava © 2025 Nevera. Sva prava pridržana.
+© 2025 Nevera. Sva prava pridržana.
+```
