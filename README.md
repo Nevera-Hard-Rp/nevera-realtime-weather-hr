@@ -42,8 +42,9 @@ Nevera Realtime Weather v1.1
 2. **Raspakirajte datoteke** u mapu resursa vašeg servera
 3. **Konfigurirajte `server.cfg`** sa sljedećim postavkama:
 
-```cfg
+
 ## **Nevera Realtime Weather konfiguracija**
+   ```cfg
 set my_sync_key "VAŠ_API_KLJUČ"           # Vaš OpenWeatherMap API ključ
 set my_sync_timezone "Europe/Zagreb"      # Vaša vremenska zona
 set my_sync_city "Split"                  # Vaš grad
