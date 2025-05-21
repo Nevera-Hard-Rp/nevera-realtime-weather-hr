@@ -49,6 +49,7 @@ set my_sync_timezone "Europe/Zagreb"      # Vaša vremenska zona
 set my_sync_city "Split"                  # Vaš grad
 set nevera_license_key "LICENČNI_KLJUČ"   # Vaš Tebex licenčni ključ
 set disable_fog "true"                    # Postavite na "false" za uključivanje magle
+-
 
 ### **Pokretanje resursa**
 ensure nevera-realtime-weather
